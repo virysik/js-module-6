@@ -56,7 +56,7 @@ const userMarina = users.find(user => user.name === "Марина");
   !!! Важно проверять что возраст не отрицательное число :)
 */
 
-const changedAgeUsers = [...users].map(user => {
+const changedAgeUsers = users.map(user => {
 
   if (user.sex === "male" && user.age > 0) {
     user.age += 10;
