@@ -51,11 +51,10 @@ const userMarina = users.find(user => user.name === "Марина");
 */
 
 const changedAgeUsers = obj => {
-  return obj.filter(user => user.age > 0).map(user => {
-     user.sex === "male" ? user.age += 10 : user.age -= 5;
-    return user;
+ return obj.filter(user => user.age > 0).map(user =>{
+   return user.sex === "male" ? { ...user, age: user.age + 10 } : { ...user, age: user.age - 5 }
   })
 };
 
-//console.log(changedAgeUsers(users));
-//console.log(users);
+console.log(changedAgeUsers(users));
+console.log(users);
