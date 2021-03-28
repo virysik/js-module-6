@@ -22,17 +22,11 @@ const adultUsers = users.filter(user => user.age > 18).sort((a, b) => a.age - b.
 const message = sortedUsers => {
   const { name, sex, age } = sortedUsers[0];
   
- if (sex === "female") {
-     return `${name} самая молодая и ей ${age} лет`;
-  } 
-
-  if (sex === "male") {
-     return `${name} самый молодой и ему ${age} лет`;
-  }
+ return sex === "female"? `${name} самая молодая и ей ${age} лет`:`${name} самый молодой и ему ${age} лет`;
 }
 
 // console.log(adultUsers);
-// console.log(message(adultUsers));
+//console.log(message(adultUsers));
 
 /* 
   2. В массиве users отфильтровать всех по полу, сначала female потом male 
@@ -57,18 +51,11 @@ const userMarina = users.find(user => user.name === "Марина");
 */
 
 const changedAgeUsers = obj => {
-  return obj.map(user => {
-
-    if (user.sex === "male" && user.age > 0) {
-      user.age += 10;
-      return user;
-    }
-
-    if (user.sex === "female" && user.age > 5) {
-      user.age -= 5;
-      return user;
-    }
+  return obj.filter(user => user.age > 0).map(user => {
+     user.sex === "male" ? user.age += 10 : user.age -= 5;
+    return user;
   })
 };
 
-// console.log(changedAgeUsers(users));
+//console.log(changedAgeUsers(users));
+//console.log(users);
