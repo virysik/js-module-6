@@ -58,3 +58,4 @@ const changedAgeUsers = obj => {
 
 console.log(changedAgeUsers(users));
 console.log(users);
+console.log(users.age === changedAgeUsers.age);
